@@ -1,18 +1,23 @@
 import yargs from "yargs";
 import { unit02 } from "./unit-02";
 
-unit02();
+//unit02();
+//
 const argv = yargs(process.argv.slice(2))
   .options({
-    a: { type: "boolean", default: true },
-    b: { type: "boolean", default: true },
-    c: { type: "boolean", default: true },
+    m: { type: "number" },
   })
   .parseSync();
 
-//type Argv = typeof argv;
-
-console.log("see you next time");
-if (argv.c) {
-  console.log("c works");
+if (argv.b) {
+  let times = {
+    seconds: argv.b,
+  };
+  setInterval(() => {
+    times.seconds = times.seconds - 1;
+    if (times.seconds < 1) {
+      process.exit();
+    }
+    console.log(times);
+  }, 1000);
 }

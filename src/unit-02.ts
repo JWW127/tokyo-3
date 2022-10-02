@@ -4,7 +4,6 @@ export const unit02 = () => {
   let image1 = new art.Image({
     filepath: "../images/sunset1.gif",
   });
-
   let image2 = new art.Image({
     filepath: "../images/sunset2.gif",
   });
