@@ -4,6 +4,7 @@ import countdown from "./countdown-render";
 const argv = yargs(process.argv.slice(2))
   .options({
     m: { type: "number" },
+    c: { type: "string" },
   })
   .parseSync();
 

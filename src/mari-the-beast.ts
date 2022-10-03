@@ -1,26 +1,28 @@
 import art from "ascii-art";
-import { red, yellow, bold } from "colorette";
+import { green, yellow, bgRedBright, bold } from "colorette";
 
-export const unit02 = () => {
+export const mari = () => {
   let swap = true;
 
   const image1 = new art.Image({
-    filepath: "../images/sunset1.png",
+    filepath: "../images/mari-small.png",
   });
 
   const image2 = new art.Image({
-    filepath: "../images/sunset2.png",
+    filepath: "../images/mari-small-invert.png",
   });
 
-  const walk = setInterval(() => {
+  const mariBeast = setInterval(() => {
     if (swap) {
       image1.write((err: any, rendered: any) => {
         console.clear();
         console.log(rendered);
         console.log(
-          bold(
-            red(
-              "DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH!"
+          bgRedBright(
+            bold(
+              green(
+                "BACK DOOR CODE: BEAST | BACK DOOR CODE: BEAST | BACK DOOR CODE: BEAST | BACK DOOR"
+              )
             )
           )
         );
@@ -33,7 +35,7 @@ export const unit02 = () => {
         console.log(
           bold(
             yellow(
-              "IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT!"
+              "A.T. FIELD: MAX | LIMITER: OFF | A.T. FIELD: MAX | LIMITER: OFF | A.T. FIELD: MAX"
             )
           )
         );
@@ -41,12 +43,12 @@ export const unit02 = () => {
       });
     }
   }, 700);
-  const clear02 = setTimeout(() => {
-    clearInterval(walk);
-    clearTimeout(clear02);
+  const clearMari = setTimeout(() => {
+    clearInterval(mariBeast);
+    clearTimeout(clearMari);
     console.clear();
     console.log("tokyo-3 | -m [number] | -c [red, green, beast]");
   }, 10000);
-  walk;
-  clear02;
+  mariBeast;
+  clearMari;
 };

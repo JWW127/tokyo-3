@@ -1,8 +1,11 @@
 import { Argv } from ".";
 import { unit02 } from "./unit-02";
+import { mari } from "./mari-the-beast";
 const cfonts = require("cfonts");
 
 const countdown = (argv: Argv) => {
+  /*-------------------------------------------------------------*/
+  /*-----------------Pick Countdown Duration---------------------*/
   let timer = {
     minutes: 0,
     seconds: 0,
@@ -18,14 +21,42 @@ const countdown = (argv: Argv) => {
   }
 
   /*-------------------------------------------------------------*/
-  /*---------------------Timings & Calls--------------------------*/
+  /*---------------------Color Picking--------------------------*/
+  let colors = {
+    main: "#52D053",
+    accent: "#765898",
+    speed: 120,
+  };
+
+  type Colors = {
+    main: string;
+    accent: string;
+    speed: number;
+  };
+
+  if (argv.c) {
+    if (argv.c === "red") {
+      colors.main = "#EC2323";
+      colors.accent = "#EA8532";
+      colors.speed = 120;
+    } else if (argv.c === "beast") {
+      colors.main = "#EC2323";
+      colors.accent = "candy";
+      colors.speed = 75;
+    } else {
+      colors.main = "#765898";
+      colors.accent = "#52D053";
+      colors.speed = 200;
+    }
+  }
+
   /*-------------------------------------------------------------*/
-  const RemainingTime = (timer: Timer) => {
+  /*---------------------Timings & Calls--------------------------*/
+  const RemainingTime = (timer: Timer, argv: Argv) => {
     //
     //-------------main logic for countdown of clock
     timer.seconds = timer.seconds - 1;
     if (timer.seconds === 0) {
-      timer.minutes = timer.minutes - 1;
       if (timer.minutes < 1 && timer.seconds === 0) {
         //
         //-------------when clock is zero clearing everything will exit process
@@ -33,10 +64,13 @@ const countdown = (argv: Argv) => {
         clearInterval(renderClock);
         //
         //-------------call animation
-        unit02();
+        if (argv.c === "beast") {
+          mari();
+        } else {
+          unit02();
+        }
       } else {
-        //
-        //-------------if still minutes to go reset seconds back to 59
+        timer.minutes = timer.minutes - 1;
         timer.seconds = 59;
       }
     }
@@ -44,8 +78,7 @@ const countdown = (argv: Argv) => {
 
   /*-------------------------------------------------------------*/
   /*-------------------Clock & Animations------------------------*/
-  /*-------------------------------------------------------------*/
-  const color2 = (timer: Timer) => {
+  const colorRender = (timer: Timer, colors: Colors) => {
     console.clear();
     cfonts.say(
       `${
@@ -60,7 +93,7 @@ const countdown = (argv: Argv) => {
       {
         font: "block",
         align: "left",
-        colors: ["#52D053", "candy"],
+        colors: [`${colors.main}`, `${colors.accent}`],
         //colors: ["#3b0967", "#52D053"],
         background: "transparent",
         letterSpacing: 1,
@@ -77,14 +110,13 @@ const countdown = (argv: Argv) => {
 
   /*-------------------------------------------------------------*/
   /*------------------------Intervals ---------------------------*/
-  /*-------------------------------------------------------------*/
   const remaining = setInterval(() => {
-    RemainingTime(timer);
+    RemainingTime(timer, argv);
   }, 1000);
   //calls color swapper & clock font render
   const renderClock = setInterval(() => {
-    color2(timer);
-  }, 300);
+    colorRender(timer, colors);
+  }, colors.speed);
 
   remaining;
   renderClock;
