@@ -1,5 +1,5 @@
 import art from "ascii-art";
-import { green, yellow, bgRedBright, bold } from "colorette";
+import { red, green, yellow, bgRedBright, bold } from "colorette";
 
 export const mari = () => {
   let swap = true;
@@ -47,7 +47,9 @@ export const mari = () => {
     clearInterval(mariBeast);
     clearTimeout(clearMari);
     console.clear();
-    console.log("tokyo-3 | -m [number] | -c [red, green, beast]");
+    console.log(
+      red(".....(っ◔◡◔)っ EXAMPLE --> | tokyo --min 5 --color red |")
+    );
   }, 10000);
   mariBeast;
   clearMari;

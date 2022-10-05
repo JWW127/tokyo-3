@@ -18,6 +18,11 @@ const countdown = (argv: Argv) => {
       minutes: argv.m - 1,
       seconds: 59,
     };
+  } else {
+    timer = {
+      minutes: 15,
+      seconds: 59,
+    };
   }
 
   /*-------------------------------------------------------------*/
@@ -63,7 +68,7 @@ const countdown = (argv: Argv) => {
         clearInterval(remaining);
         clearInterval(renderClock);
         //
-        //-------------call animation
+        //-------------call ending animation
         if (argv.c === "beast") {
           mari();
         } else {
@@ -96,7 +101,7 @@ const countdown = (argv: Argv) => {
         colors: [`${colors.main}`, `${colors.accent}`],
         //colors: ["#3b0967", "#52D053"],
         background: "transparent",
-        letterSpacing: 1,
+        letterSpacing: 0,
         lineHeight: 1,
         space: false,
         maxLength: "0",

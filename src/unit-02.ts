@@ -45,7 +45,9 @@ export const unit02 = () => {
     clearInterval(walk);
     clearTimeout(clear02);
     console.clear();
-    console.log("tokyo-3 | -m [number] | -c [red, green, beast]");
+    console.log(
+      red(".....(っ◔◡◔)っ EXAMPLE --> | tokyo --min 5 --color red |")
+    );
   }, 10000);
   walk;
   clear02;

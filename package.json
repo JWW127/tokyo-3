@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "npx ts-node ./src/index.ts"
   },
+  "bin": {
+    "tokyo": "./dist/index.js"
+  },
   "keywords": [
     "Pomodoro",
     "Cli",
@@ -27,6 +30,7 @@
   "dependencies": {
     "ascii-art": "^2.8.5",
     "cfonts": "^3.1.1",
+    "colorette": "^2.0.19",
     "yargs": "^17.5.1"
   }
 }
