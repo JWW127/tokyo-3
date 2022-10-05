@@ -2,15 +2,15 @@
 
 import yargs from "yargs";
 import countdown from "./countdown-render";
-import { red, green, bold, bgBlackBright, magentaBright } from "colorette";
+import { red, green, bold, bgBlackBright, yellow } from "colorette";
 const version = require("../package").version;
 
 const argv = yargs(process.argv.slice(2))
   .usage(
     bgBlackBright(
       bold(
-        magentaBright(
-          ".....(っ◔◡◔)っ EXAMPLE --> | tokyo --min 5 --color red |"
+        yellow(
+          `\n` + ".....(っ◔◡◔)っ EXAMPLE|   $ tokyo --min 5 --color red     |"
         )
       )
     )
@@ -25,8 +25,13 @@ const argv = yargs(process.argv.slice(2))
     c: {
       type: "string",
       alias: "color",
-      describe: `Color Options  ::  ${red("red")}, ${green("green")}, beast`,
+      describe: `Color Options  ::  ${red("red")}, ${green(
+        "green"
+      )}, beast, angel, random`,
       usage: "tokyo -c red",
+    },
+    t: {
+      alias: "test",
     },
     h: {
       alias: "help",
