@@ -51,7 +51,7 @@ export const unit02 = () => {
     console.clear();
     console.log(yellow(example));
     process.exit();
-  }, 10000);
+  }, 5000);
 
   walk;
   clear02;

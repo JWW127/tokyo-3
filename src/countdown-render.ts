@@ -1,6 +1,7 @@
 import { Argv, rl } from ".";
 import { unit02 } from "./unit-02";
 import { mari } from "./mari-the-beast";
+import { baka } from "./baka";
 const cfonts = require("cfonts");
 
 const countdown = (argv: Argv) => {
@@ -80,6 +81,11 @@ const countdown = (argv: Argv) => {
       colors.accent = "#EA8532";
       colors.speed = 120;
       break;
+    case "green":
+      colors.main = "#52D053";
+      colors.accent = "#765898";
+      colors.speed = 120;
+      break;
     case "angel":
       colors.main = "#3e0694";
       colors.accent = "candy";
@@ -90,9 +96,9 @@ const countdown = (argv: Argv) => {
       colors.accent = "candy";
       colors.speed = 75;
       break;
-    case "green":
-      colors.main = "#765898";
-      colors.accent = "#52D053";
+    case "baka":
+      colors.main = "#39ff14";
+      colors.accent = "#765898";
       colors.speed = 200;
       break;
     case "random":
@@ -118,8 +124,13 @@ const countdown = (argv: Argv) => {
         //-------------call ending animation
         if (argv.c === "beast") {
           mari();
-        } else {
+        } else if (argv.c === "angel") {
           unit02();
+        } else if (argv.c === "baka") {
+          baka();
+        } else {
+          rl.write("\u001B[?25h");
+          process.exit();
         }
       } else {
         timer.minutes = timer.minutes - 1;

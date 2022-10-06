@@ -24,7 +24,7 @@ export const mari = () => {
           bgRedBright(
             bold(
               green(
-                "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST |"
+                "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST"
               )
             )
           )
@@ -38,14 +38,14 @@ export const mari = () => {
         console.log(
           bold(
             yellow(
-              "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST |"
+              "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST"
             )
           )
         );
         swap = !swap;
       });
     }
-  }, 200);
+  }, 120);
   const clearMari = setTimeout(() => {
     clearInterval(mariBeast);
     clearTimeout(clearMari);
@@ -53,7 +53,7 @@ export const mari = () => {
     console.clear();
     console.log(yellow(example));
     process.exit();
-  }, 10000);
+  }, 5000);
   mariBeast;
   clearMari;
 };

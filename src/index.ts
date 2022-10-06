@@ -35,7 +35,7 @@ const argv = yargs(process.argv.slice(2))
       alias: "color",
       describe: `Color Options  ::  ${red("red")}, ${green(
         "green"
-      )}, ${blueBright("angel")}, ${redBright("beast")}, random`,
+      )}, ${blueBright("angel")}, ${redBright("beast")}, random, baka`,
       usage: "tokyo -c red",
     },
     t: {
