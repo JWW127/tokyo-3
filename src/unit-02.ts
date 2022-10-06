@@ -1,5 +1,6 @@
 import art from "ascii-art";
 import { red, yellow, bold } from "colorette";
+import { example, rl } from ".";
 
 export const unit02 = () => {
   let swap = true;
@@ -20,7 +21,7 @@ export const unit02 = () => {
         console.log(
           bold(
             red(
-              "DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH!"
+              "WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL!"
             )
           )
         );
@@ -33,7 +34,7 @@ export const unit02 = () => {
         console.log(
           bold(
             yellow(
-              "IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT! DEATH! IMPACT!"
+              "9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING!"
             )
           )
         );
@@ -41,14 +42,17 @@ export const unit02 = () => {
       });
     }
   }, 700);
+
   const clear02 = setTimeout(() => {
     clearInterval(walk);
     clearTimeout(clear02);
+    //------------------------------------------ unhide cursor
+    rl.write("\u001B[?25h");
     console.clear();
-    console.log(
-      red(".....(っ◔◡◔)っ EXAMPLE --> | tokyo --min 5 --color red |")
-    );
+    console.log(yellow(example));
+    process.exit();
   }, 10000);
+
   walk;
   clear02;
 };

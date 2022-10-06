@@ -1,4 +1,4 @@
-import { Argv } from ".";
+import { Argv, rl } from ".";
 import { unit02 } from "./unit-02";
 import { mari } from "./mari-the-beast";
 const cfonts = require("cfonts");
@@ -32,6 +32,8 @@ const countdown = (argv: Argv) => {
 
   /*-------------------------------------------------------------*/
   /*---------------------Color Picking--------------------------*/
+
+  //------------------------------------------hex randomizer
   const ranHex = () => {
     let result = [];
     let hexRef = [
@@ -58,6 +60,7 @@ const countdown = (argv: Argv) => {
     }
     return result.join("");
   };
+  //-------------------------------------------------------
 
   let colors = {
     main: "#52D053",
@@ -71,28 +74,32 @@ const countdown = (argv: Argv) => {
     speed: number;
   };
 
-  if (argv.c) {
-    if (argv.c === "red") {
+  switch (argv.c) {
+    case "red":
       colors.main = "#EC2323";
       colors.accent = "#EA8532";
       colors.speed = 120;
-    } else if (argv.c === "angel") {
+      break;
+    case "angel":
       colors.main = "#3e0694";
       colors.accent = "candy";
       colors.speed = 75;
-    } else if (argv.c === "beast") {
+      break;
+    case "beast":
       colors.main = "#EC2323";
       colors.accent = "candy";
       colors.speed = 75;
-    } else if (argv.c === "green") {
+      break;
+    case "green":
       colors.main = "#765898";
       colors.accent = "#52D053";
       colors.speed = 200;
-    } else if (argv.c === "random") {
+      break;
+    case "random":
       colors.main = `#${ranHex()}`;
       colors.accent = `#${ranHex()}`;
       colors.speed = 200;
-    }
+      break;
   }
 
   /*-------------------------------------------------------------*/
@@ -142,7 +149,7 @@ const countdown = (argv: Argv) => {
         background: "transparent",
         letterSpacing: 0,
         lineHeight: 1,
-        space: false,
+        space: true,
         maxLength: "80",
         gradient: false,
         independentGradient: false,
@@ -162,6 +169,8 @@ const countdown = (argv: Argv) => {
     colorRender(timer, colors);
   }, colors.speed);
 
+  //------------------------------------- hide cursor
+  rl.write("\u001B[?25l");
   remaining;
   renderClock;
 };

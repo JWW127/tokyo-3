@@ -10,7 +10,13 @@ const countdown = (argv) => {
         minutes: 0,
         seconds: 0,
     };
-    if (argv.m) {
+    if (argv.t) {
+        timer = {
+            minutes: 0,
+            seconds: 2,
+        };
+    }
+    else if (argv.m) {
         timer = {
             minutes: argv.m - 1,
             seconds: 59,
@@ -24,6 +30,31 @@ const countdown = (argv) => {
     }
     /*-------------------------------------------------------------*/
     /*---------------------Color Picking--------------------------*/
+    const ranHex = () => {
+        let result = [];
+        let hexRef = [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+        ];
+        for (let n = 0; n < 6; n++) {
+            result.push(hexRef[Math.floor(Math.random() * 16)]);
+        }
+        return result.join("");
+    };
     let colors = {
         main: "#52D053",
         accent: "#765898",
@@ -35,14 +66,24 @@ const countdown = (argv) => {
             colors.accent = "#EA8532";
             colors.speed = 120;
         }
+        else if (argv.c === "angel") {
+            colors.main = "#3e0694";
+            colors.accent = "candy";
+            colors.speed = 75;
+        }
         else if (argv.c === "beast") {
             colors.main = "#EC2323";
             colors.accent = "candy";
             colors.speed = 75;
         }
-        else {
+        else if (argv.c === "green") {
             colors.main = "#765898";
             colors.accent = "#52D053";
+            colors.speed = 200;
+        }
+        else if (argv.c === "random") {
+            colors.main = `#${ranHex()}`;
+            colors.accent = `#${ranHex()}`;
             colors.speed = 200;
         }
     }
@@ -77,20 +118,19 @@ const countdown = (argv) => {
     /*-------------------Clock & Animations------------------------*/
     const colorRender = (timer, colors) => {
         console.clear();
-        cfonts.say(`${timer.minutes < 10
+        cfonts.say(`   ${timer.minutes < 10
             ? timer.minutes < 1
                 ? "00"
                 : "0" + timer.minutes
-            : timer.minutes} : ${timer.seconds < 10 ? "0" + timer.seconds : timer.seconds} : ${new Date().getMilliseconds()}`, {
+            : timer.minutes} : ${timer.seconds < 10 ? "0" + timer.seconds : timer.seconds} : ${new Date().getMilliseconds()}     `, {
             font: "block",
             align: "left",
             colors: [`${colors.main}`, `${colors.accent}`],
-            //colors: ["#3b0967", "#52D053"],
             background: "transparent",
             letterSpacing: 0,
             lineHeight: 1,
             space: false,
-            maxLength: "0",
+            maxLength: "80",
             gradient: false,
             independentGradient: false,
             transitionGradient: false,

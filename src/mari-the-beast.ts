@@ -1,15 +1,18 @@
 import art from "ascii-art";
-import { red, green, yellow, bgRedBright, bold } from "colorette";
+import { green, yellow, bgRedBright, bold } from "colorette";
+import { example, rl } from ".";
 
 export const mari = () => {
   let swap = true;
 
   const image1 = new art.Image({
     filepath: "../images/mari-small.png",
+    threshhold: 100,
   });
 
   const image2 = new art.Image({
     filepath: "../images/mari-small-invert.png",
+    threshhold: 100,
   });
 
   const mariBeast = setInterval(() => {
@@ -21,7 +24,7 @@ export const mari = () => {
           bgRedBright(
             bold(
               green(
-                "BACK DOOR CODE: BEAST | BACK DOOR CODE: BEAST | BACK DOOR CODE: BEAST | BACK DOOR"
+                "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST |"
               )
             )
           )
@@ -35,21 +38,21 @@ export const mari = () => {
         console.log(
           bold(
             yellow(
-              "A.T. FIELD: MAX | LIMITER: OFF | A.T. FIELD: MAX | LIMITER: OFF | A.T. FIELD: MAX"
+              "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST |"
             )
           )
         );
         swap = !swap;
       });
     }
-  }, 700);
+  }, 200);
   const clearMari = setTimeout(() => {
     clearInterval(mariBeast);
     clearTimeout(clearMari);
+    rl.write("\u001B[?25h");
     console.clear();
-    console.log(
-      red(".....(っ◔◡◔)っ EXAMPLE --> | tokyo --min 5 --color red |")
-    );
+    console.log(yellow(example));
+    process.exit();
   }, 10000);
   mariBeast;
   clearMari;
