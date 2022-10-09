@@ -111,27 +111,34 @@ const countdown = (argv: Argv) => {
   /*-------------------------------------------------------------*/
   /*---------------------Timings & Calls--------------------------*/
   const RemainingTime = (timer: Timer, argv: Argv) => {
-    //
     //-------------main logic for countdown of clock
     timer.seconds = timer.seconds - 1;
     if (timer.seconds === 0) {
       if (timer.minutes < 1 && timer.seconds === 0) {
-        //
-        //-------------when clock is zero clearing everything will exit process
-        clearInterval(remaining);
-        clearInterval(renderClock);
-        //
-        //-------------call ending animation
-        if (argv.c === "beast") {
-          mari();
-        } else if (argv.c === "angel") {
-          unit02();
-        } else if (argv.c === "baka") {
-          baka();
-        } else {
-          rl.write("\u001B[?25h");
-          process.exit();
-        }
+        //--need this timeout to allow for user to see clock hit ~ 00:00:00
+        let last = setTimeout(() => {
+          //---clear inital timers
+          clearInterval(remaining);
+          clearInterval(renderClock);
+          //
+          //-------------call ending animation
+          if (argv.c === "beast") {
+            mari();
+            clearTimeout(last);
+          } else if (argv.c === "angel") {
+            unit02();
+            clearTimeout(last);
+          } else if (argv.c === "baka") {
+            baka();
+            clearTimeout(last);
+          } else {
+            rl.write("\u001B[?25h");
+            console.clear();
+            clearTimeout(last);
+            process.exit();
+          }
+        }, 1000);
+        last;
       } else {
         timer.minutes = timer.minutes - 1;
         timer.seconds = 59;
