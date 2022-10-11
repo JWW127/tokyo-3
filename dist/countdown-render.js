@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const _1 = require(".");
 const unit_02_1 = require("./unit-02");
 const mari_the_beast_1 = require("./mari-the-beast");
+const baka_1 = require("./baka");
 const cfonts = require("cfonts");
 const countdown = (argv) => {
     /*-------------------------------------------------------------*/
@@ -30,6 +32,7 @@ const countdown = (argv) => {
     }
     /*-------------------------------------------------------------*/
     /*---------------------Color Picking--------------------------*/
+    //------------------------------------------hex randomizer
     const ranHex = () => {
         let result = [];
         let hexRef = [
@@ -55,37 +58,43 @@ const countdown = (argv) => {
         }
         return result.join("");
     };
+    //-------------------------------------------------------
     let colors = {
         main: "#52D053",
         accent: "#765898",
         speed: 120,
     };
-    if (argv.c) {
-        if (argv.c === "red") {
+    switch (argv.c) {
+        case "red":
             colors.main = "#EC2323";
             colors.accent = "#EA8532";
             colors.speed = 120;
-        }
-        else if (argv.c === "angel") {
+            break;
+        case "green":
+            colors.main = "#52D053";
+            colors.accent = "#765898";
+            colors.speed = 120;
+            break;
+        case "angel":
             colors.main = "#3e0694";
             colors.accent = "candy";
             colors.speed = 75;
-        }
-        else if (argv.c === "beast") {
+            break;
+        case "beast":
             colors.main = "#EC2323";
             colors.accent = "candy";
             colors.speed = 75;
-        }
-        else if (argv.c === "green") {
-            colors.main = "#765898";
-            colors.accent = "#52D053";
+            break;
+        case "baka":
+            colors.main = "#39ff14";
+            colors.accent = "#765898";
             colors.speed = 200;
-        }
-        else if (argv.c === "random") {
+            break;
+        case "random":
             colors.main = `#${ranHex()}`;
             colors.accent = `#${ranHex()}`;
             colors.speed = 200;
-        }
+            break;
     }
     /*-------------------------------------------------------------*/
     /*---------------------Timings & Calls--------------------------*/
@@ -104,8 +113,16 @@ const countdown = (argv) => {
                 if (argv.c === "beast") {
                     (0, mari_the_beast_1.mari)();
                 }
-                else {
+                else if (argv.c === "angel") {
                     (0, unit_02_1.unit02)();
+                }
+                else if (argv.c === "baka") {
+                    (0, baka_1.baka)();
+                }
+                else {
+                    _1.rl.write("\u001B[?25h");
+                    console.clear();
+                    process.exit();
                 }
             }
             else {
@@ -129,7 +146,7 @@ const countdown = (argv) => {
             background: "transparent",
             letterSpacing: 0,
             lineHeight: 1,
-            space: false,
+            space: true,
             maxLength: "80",
             gradient: false,
             independentGradient: false,
@@ -146,6 +163,8 @@ const countdown = (argv) => {
     const renderClock = setInterval(() => {
         colorRender(timer, colors);
     }, colors.speed);
+    //------------------------------------- hide cursor
+    _1.rl.write("\u001B[?25l");
     remaining;
     renderClock;
 };
