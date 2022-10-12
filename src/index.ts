@@ -11,11 +11,18 @@ import {
   blueBright,
   redBright,
 } from "colorette";
+process.stdin.resume();
 const version = require("../package").version;
 
 export const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
+});
+
+process.on("SIGINT", () => {
+  rl.write("\u001B[?25h");
+  console.clear();
+  process.exit(0);
 });
 
 export const example =
