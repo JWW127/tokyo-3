@@ -1,5 +1,5 @@
 import { Argv, rl } from ".";
-import { unit02 } from "./unit-02";
+import { unit03 } from "./unit-03";
 import { mari } from "./mari-the-beast";
 import { baka } from "./baka";
 const cfonts = require("cfonts");
@@ -126,7 +126,7 @@ const countdown = (argv: Argv) => {
             mari();
             clearTimeout(last);
           } else if (argv.c === "angel") {
-            unit02();
+            unit03();
             clearTimeout(last);
           } else if (argv.c === "baka") {
             baka();

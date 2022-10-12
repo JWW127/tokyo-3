@@ -19,7 +19,7 @@ export const rl = readline.createInterface({
 });
 
 export const example =
-  "........(っ◔◡◔)っ EXAMPLE|        $ tokyo --min 5 --color red             |";
+  "\n ........(っ◔◡◔)っ EXAMPLE|        $ tokyo --min 5 --color red             |";
 
 const argv = yargs(process.argv.slice(2))
   .usage(bgBlackBright(bold(yellow(`\n\n  ${example}`))))
