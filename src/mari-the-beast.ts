@@ -20,6 +20,7 @@ export const mari = () => {
 
   const theBeast = setInterval(async () => {
     terminal.clear();
+
     if (swap) {
       await mari1();
       console.log(
