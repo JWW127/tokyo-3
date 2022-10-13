@@ -8,7 +8,7 @@ export const baka = () => {
 
   const run1 = async () => {
     return await terminal.drawImage(`./../images/unit-1-run/r${swap}.jpg`, {
-      shrink: { width: 70, height: 70 },
+      shrink: { width: 80, height: 80 },
     });
   };
   const atField = [
@@ -30,7 +30,7 @@ export const baka = () => {
       swap = 1;
     }
     console.log(bold(red(atField[swap - 1])));
-  }, 300);
+  }, 200);
   const clearBaka = setTimeout(() => {
     clearInterval(bakaRun);
     clearTimeout(clearBaka);

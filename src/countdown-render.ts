@@ -99,12 +99,12 @@ const countdown = (argv: Argv) => {
     case "baka":
       colors.main = "#39ff14";
       colors.accent = "#765898";
-      colors.speed = 200;
+      colors.speed = 300;
       break;
     case "random":
       colors.main = `#${ranHex()}`;
       colors.accent = `#${ranHex()}`;
-      colors.speed = 200;
+      colors.speed = 500;
       break;
   }
 
