@@ -2,6 +2,7 @@ import { Argv, rl } from ".";
 import { unit03 } from "./unit-03";
 import { mari } from "./mari-the-beast";
 import { baka } from "./baka";
+import { rei } from "./rei";
 const cfonts = require("cfonts");
 
 const countdown = (argv: Argv) => {
@@ -101,6 +102,11 @@ const countdown = (argv: Argv) => {
       colors.accent = "#765898";
       colors.speed = 300;
       break;
+    case "rei":
+      colors.main = "#FF929E";
+      colors.accent = "#A9D4FC";
+      colors.speed = 200;
+      break;
     case "random":
       colors.main = `#${ranHex()}`;
       colors.accent = `#${ranHex()}`;
@@ -130,6 +136,9 @@ const countdown = (argv: Argv) => {
             clearTimeout(last);
           } else if (argv.c === "baka") {
             baka();
+            clearTimeout(last);
+          } else if (argv.c === "rei") {
+            rei();
             clearTimeout(last);
           } else {
             rl.write("\u001B[?25h");

@@ -10,6 +10,7 @@ import {
   yellow,
   blueBright,
   redBright,
+  blackBright,
 } from "colorette";
 process.stdin.resume();
 const version = require("../package").version;
@@ -42,7 +43,9 @@ const argv = yargs(process.argv.slice(2))
       alias: "color",
       describe: `Color Options  ::  ${red("red")}, ${green(
         "green"
-      )}, ${blueBright("angel")}, ${redBright("beast")}, random, baka`,
+      )}, ${blueBright("angel")}, ${redBright("beast")}, random, ${blackBright(
+        "rei"
+      )}, baka`,
       usage: "tokyo -c red",
     },
     t: {
