@@ -1,43 +1,45 @@
-import { green, yellow, bgRedBright, bold } from "colorette";
+import { white, yellow, bgBlack, bold, bgGreen } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
 
-export const mari = () => {
+export const pen = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
-  const mari1 = async () => {
-    return await terminal.drawImage("./../images/mari-small.png", {
+  const pen1 = async () => {
+    return await terminal.drawImage("./../images/penpen/pen-1.jpg", {
       shrink: { width: 80, height: 80 },
     });
   };
 
-  const mari2 = async () => {
-    return await terminal.drawImage("./../images/mari-small-invert.png", {
+  const pen2 = async () => {
+    return await terminal.drawImage("./../images/penpen/pen-2.jpg", {
       shrink: { width: 80, height: 80 },
     });
   };
 
-  const theBeast = setInterval(async () => {
+  const thePen = setInterval(async () => {
     terminal.clear();
 
     if (swap) {
-      await mari1();
+      await pen1();
       console.log(
-        bold(
-          yellow(
-            "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST"
+        bgBlack(
+          bold(
+            yellow(
+              "BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN"
+            )
           )
         )
       );
     } else {
-      await mari2();
+      await pen2();
       console.log(
-        bgRedBright(
+        bgGreen(
           bold(
-            green(
-              "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST"
+            white(
+              "BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN"
             )
           )
         )
@@ -47,14 +49,14 @@ export const mari = () => {
   }, 300);
 
   const clearAll = setTimeout(() => {
-    clearInterval(theBeast);
+    clearInterval(thePen);
     clearTimeout(clearAll);
     rl.write("\u001B[?25h");
     terminal.clear();
     console.log(yellow(example));
     process.exit();
   }, 10000);
-  theBeast;
+  thePen;
   alert("🚨TIME🚨");
   clearAll;
 };

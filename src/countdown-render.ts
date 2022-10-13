@@ -1,8 +1,9 @@
 import { Argv, rl } from ".";
 import { unit03 } from "./unit-03";
 import { mari } from "./mari-the-beast";
-import { baka } from "./baka";
+import { shinji } from "./shinji";
 import { rei } from "./rei";
+import { pen } from "./pen";
 const cfonts = require("cfonts");
 
 const countdown = (argv: Argv) => {
@@ -87,6 +88,11 @@ const countdown = (argv: Argv) => {
       colors.accent = "#765898";
       colors.speed = 120;
       break;
+    case "pen":
+      colors.main = "#FFC933";
+      colors.accent = "#C5C3BF";
+      colors.speed = 120;
+      break;
     case "angel":
       colors.main = "#3e0694";
       colors.accent = "candy";
@@ -97,7 +103,7 @@ const countdown = (argv: Argv) => {
       colors.accent = "candy";
       colors.speed = 75;
       break;
-    case "baka":
+    case "shinji":
       colors.main = "#39ff14";
       colors.accent = "#765898";
       colors.speed = 300;
@@ -121,7 +127,7 @@ const countdown = (argv: Argv) => {
     timer.seconds = timer.seconds - 1;
     if (timer.seconds === 0) {
       if (timer.minutes < 1 && timer.seconds === 0) {
-        //--need this timeout to allow for user to see clock hit ~ 00:00:00
+        //--need this timeout to allow for user to see clock hit ~ 00:00:
         let last = setTimeout(() => {
           //---clear inital timers
           clearInterval(remaining);
@@ -134,11 +140,14 @@ const countdown = (argv: Argv) => {
           } else if (argv.c === "angel") {
             unit03();
             clearTimeout(last);
-          } else if (argv.c === "baka") {
-            baka();
+          } else if (argv.c === "shinji") {
+            shinji();
             clearTimeout(last);
           } else if (argv.c === "rei") {
             rei();
+            clearTimeout(last);
+          } else if (argv.c === "pen") {
+            pen();
             clearTimeout(last);
           } else {
             rl.write("\u001B[?25h");

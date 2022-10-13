@@ -5,6 +5,7 @@ import countdown from "./countdown-render";
 import {
   red,
   green,
+  white,
   bold,
   bgBlackBright,
   yellow,
@@ -45,7 +46,7 @@ const argv = yargs(process.argv.slice(2))
         "green"
       )}, ${blueBright("angel")}, ${redBright("beast")}, random, ${blackBright(
         "rei"
-      )}, baka`,
+      )}, shinji, ${white("pen")}`,
       usage: "tokyo -c red",
     },
     t: {

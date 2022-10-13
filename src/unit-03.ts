@@ -1,5 +1,6 @@
 import { red, yellow, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
+import alert from "alert";
 import { example, rl } from ".";
 
 export const unit03 = () => {
@@ -50,8 +51,8 @@ export const unit03 = () => {
     terminal.clear();
     console.log(yellow(example));
     process.exit();
-  }, 5000);
-
+  }, 10000);
   walk;
+  alert("🚨TIME🚨");
   clearAll;
 };

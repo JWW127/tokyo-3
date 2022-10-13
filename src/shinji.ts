@@ -1,8 +1,9 @@
 import { red, yellow, bold } from "colorette";
-import { example, rl } from ".";
 import terminalKitPackage from "terminal-kit";
+import alert from "alert";
+import { example, rl } from ".";
 
-export const baka = () => {
+export const shinji = () => {
   const { terminal } = terminalKitPackage;
   let swap = 1;
 
@@ -38,7 +39,8 @@ export const baka = () => {
     console.clear();
     console.log(yellow(example));
     process.exit();
-  }, 5000);
+  }, 10000);
   bakaRun;
+  alert("🚨TIME🚨");
   clearBaka;
 };

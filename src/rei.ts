@@ -1,4 +1,5 @@
 import { green, yellow, bgBlackBright, bold, magentaBright } from "colorette";
+import alert from "alert";
 import terminalKitPackage from "terminal-kit";
 import { example, rl } from ".";
 
@@ -52,7 +53,8 @@ export const rei = () => {
     terminal.clear();
     console.log(yellow(example));
     process.exit();
-  }, 5000);
+  }, 10000);
   blink;
+  alert("🚨TIME🚨");
   clearAll;
 };
