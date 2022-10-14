@@ -16,18 +16,25 @@ This is a terminal based pomodoro timer. The Pomodor technique is a time managem
 Tokyo-3 requires Node.js runtime. As there are numerous ways to install Node I'll just recommend a few, all are viable although I prefer NVM.
 
 Direct from Node
+<br>
 [NODE](https://nodejs.org/en/download/)
 
 Mac/Linux (Preferred)
 [NVM](https://github.com/nvm-sh/nvm)
+<br>
 [n](https://github.com/tj/n)
 
 Windows (Preferred)
 [NVM-windows](https://github.com/coreybutler/nvm-windows)
+<br>
 [nodist](https://github.com/nullivex/nodist)
 
 After NODE is installed you should be able to install TOKYO-3 with the following command in your terminal.
-` npm install -g tokyo-3`
+<br>
+
+```
+npm install -g tokyo-3
+```
 
 ## Usage
 
