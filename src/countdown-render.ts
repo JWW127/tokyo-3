@@ -4,6 +4,9 @@ import { mari } from "./mari-the-beast";
 import { shinji } from "./shinji";
 import { rei } from "./rei";
 import { pen } from "./pen";
+import { dss } from "./dss";
+import { gendo } from "./gendo";
+import { nerv } from "./nerv";
 const cfonts = require("cfonts");
 
 const countdown = (argv: Argv) => {
@@ -28,7 +31,7 @@ const countdown = (argv: Argv) => {
     };
   } else {
     timer = {
-      minutes: 15,
+      minutes: 14,
       seconds: 59,
     };
   }
@@ -66,9 +69,9 @@ const countdown = (argv: Argv) => {
   //-------------------------------------------------------
 
   let colors = {
-    main: "#52D053",
-    accent: "#765898",
-    speed: 120,
+    main: `#${ranHex()}`,
+    accent: `#${ranHex()}`,
+    speed: 300,
   };
 
   type Colors = {
@@ -113,10 +116,25 @@ const countdown = (argv: Argv) => {
       colors.accent = "#A9D4FC";
       colors.speed = 200;
       break;
+    case "gendo":
+      colors.main = "#987f57";
+      colors.accent = "#9c382f";
+      colors.speed = 200;
+      break;
+    case "nerv":
+      colors.main = "#F97D00";
+      colors.accent = "#F90000";
+      colors.speed = 200;
+      break;
+    case "dss":
+      colors.main = "#000000";
+      colors.accent = "candy";
+      colors.speed = 200;
+      break;
     case "random":
       colors.main = `#${ranHex()}`;
       colors.accent = `#${ranHex()}`;
-      colors.speed = 500;
+      colors.speed = 300;
       break;
   }
 
@@ -148,6 +166,15 @@ const countdown = (argv: Argv) => {
             clearTimeout(last);
           } else if (argv.c === "pen") {
             pen();
+            clearTimeout(last);
+          } else if (argv.c === "nerv") {
+            nerv();
+            clearTimeout(last);
+          } else if (argv.c === "gendo") {
+            gendo();
+            clearTimeout(last);
+          } else if (argv.c === "dss") {
+            dss();
             clearTimeout(last);
           } else {
             rl.write("\u001B[?25h");

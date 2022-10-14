@@ -1,4 +1,11 @@
-import { green, yellow, bgBlackBright, bold, magentaBright } from "colorette";
+import {
+  yellow,
+  bgBlackBright,
+  bold,
+  magentaBright,
+  bgBlack,
+  cyan,
+} from "colorette";
 import alert from "alert";
 import terminalKitPackage from "terminal-kit";
 import { example, rl } from ".";
@@ -25,9 +32,11 @@ export const rei = () => {
     if (swap) {
       await rei1();
       console.log(
-        bold(
-          magentaBright(
-            "[̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅]"
+        bgBlack(
+          bold(
+            magentaBright(
+              "[̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅]  [̲̅ə̲̅٨̲̅٥̲̅٦̲̅]  [̲̅ə̲̅٨̲̅٥̲̅٦̲̅]  [̲̅ə̲̅٨̲̅٥̲̅٦̲̅]  [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅] [̲̅ə̲̅٨̲̅٥̲̅٦̲̅]"
+            )
           )
         )
       );
@@ -36,8 +45,8 @@ export const rei = () => {
       console.log(
         bgBlackBright(
           bold(
-            green(
-              "ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ"
+            cyan(
+              "ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ  ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ ᶫᵒᵛᵉᵧₒᵤ"
             )
           )
         )

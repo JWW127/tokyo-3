@@ -4,14 +4,18 @@ import yargs from "yargs";
 import countdown from "./countdown-render";
 import {
   red,
+  cyan,
   green,
+  magenta,
   white,
+  blue,
   bold,
   bgBlackBright,
   yellow,
   blueBright,
   redBright,
   blackBright,
+  magentaBright,
 } from "colorette";
 process.stdin.resume();
 const version = require("../package").version;
@@ -44,9 +48,11 @@ const argv = yargs(process.argv.slice(2))
       alias: "color",
       describe: `Color Options  ::  ${red("red")}, ${green(
         "green"
-      )}, ${blueBright("angel")}, ${redBright("beast")}, random, ${blackBright(
+      )}, ${blueBright("angel")}, ${redBright("beast")}, ${blackBright(
         "rei"
-      )}, shinji, ${white("pen")}`,
+      )}, ${magenta("shinji")}, ${blue("gendo")}, ${cyan("dss")}, ${white(
+        "pen"
+      )}, ${magentaBright("nerv")}, random`,
       usage: "tokyo -c red",
     },
     t: {

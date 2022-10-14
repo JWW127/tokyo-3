@@ -27,7 +27,7 @@ export const mari = () => {
       console.log(
         bold(
           yellow(
-            "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST"
+            "BACK DOOR CODE: THE BEAST | BACK DOOR CODE:THE BEAST | BACK DOOR CODE: THE BEAST"
           )
         )
       );
@@ -37,7 +37,7 @@ export const mari = () => {
         bgRedBright(
           bold(
             green(
-              "BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST | BACK DOOR CODE: THE BEAST"
+              "BACK DOOR CODE: THE BEAST | BACK DOOR CODE:THE BEAST | BACK DOOR CODE: THE BEAST"
             )
           )
         )

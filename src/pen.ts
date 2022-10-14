@@ -1,4 +1,4 @@
-import { white, yellow, bgBlack, bold, bgGreen } from "colorette";
+import { white, yellow, bgBlack, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
@@ -28,7 +28,7 @@ export const pen = () => {
         bgBlack(
           bold(
             yellow(
-              "BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN"
+              "BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE:  PEN PEN  |  BACK DOOR CODE: PEN PEN"
             )
           )
         )
@@ -36,10 +36,10 @@ export const pen = () => {
     } else {
       await pen2();
       console.log(
-        bgGreen(
+        bgBlack(
           bold(
             white(
-              "BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE: PEN PEN"
+              "BACK DOOR CODE: PEN PEN  |  BACK DOOR CODE:  PEN PEN  |  BACK DOOR CODE: PEN PEN"
             )
           )
         )

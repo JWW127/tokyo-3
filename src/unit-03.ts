@@ -26,7 +26,7 @@ export const unit03 = () => {
       console.log(
         bold(
           red(
-            "WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL!"
+            "WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL"
           )
         )
       );
@@ -36,7 +36,7 @@ export const unit03 = () => {
       console.log(
         bold(
           yellow(
-            "9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING!"
+            "9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING! 9th ANGEL! WARNING"
           )
         )
       );
