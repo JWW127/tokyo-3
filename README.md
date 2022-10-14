@@ -72,7 +72,7 @@ random
 
 ### Animations
 
-Animations are linked to their corresponding color. The red, green, random color options have no animations.
+Animations are linked to their corresponding color. The green and random color options have no animations.
 
 ## Trouble Shooting
 
