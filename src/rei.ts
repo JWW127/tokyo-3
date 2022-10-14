@@ -53,7 +53,7 @@ export const rei = () => {
       );
     }
     swap = !swap;
-  }, 500);
+  }, 800);
 
   const clearAll = setTimeout(() => {
     clearInterval(blink);

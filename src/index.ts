@@ -17,6 +17,9 @@ import {
   blackBright,
   magentaBright,
 } from "colorette";
+
+export type Argv = typeof argv;
+
 process.stdin.resume();
 const version = require("../package").version;
 
@@ -68,5 +71,3 @@ const argv = yargs(process.argv.slice(2))
   .parseSync();
 
 countdown(argv);
-
-export type Argv = typeof argv;

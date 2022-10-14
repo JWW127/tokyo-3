@@ -38,7 +38,7 @@ export const dss = () => {
       );
     }
     swap = !swap;
-  }, 500);
+  }, 800);
 
   const clearAll = setTimeout(() => {
     clearInterval(theChoker);

@@ -46,7 +46,7 @@ export const nerv = () => {
       );
     }
     swap = !swap;
-  }, 300);
+  }, 1000);
 
   const clearAll = setTimeout(() => {
     clearInterval(theNerv);

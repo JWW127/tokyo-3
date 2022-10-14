@@ -4,7 +4,7 @@
   "description": "Worlds Best Pomodoro. 3rd Impact Imminent. Switching to Auxillary Power.",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "npx ts-node ./src/index.ts"
+    "build": "tsc"
   },
   "bin": {
     "tokyo": "./dist/index.js"
@@ -17,7 +17,7 @@
     "Clock"
   ],
   "author": "github.com/jww127",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/node": "^18.7.23",

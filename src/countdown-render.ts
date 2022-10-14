@@ -1,4 +1,5 @@
 import { Argv, rl } from ".";
+import alert from "alert";
 import { unit03 } from "./unit-03";
 import { mari } from "./mari-the-beast";
 import { shinji } from "./shinji";
@@ -9,15 +10,18 @@ import { gendo } from "./gendo";
 import { nerv } from "./nerv";
 const cfonts = require("cfonts");
 
+export type Timer = {
+  minutes: number;
+  seconds: number;
+};
+
 const countdown = (argv: Argv) => {
   /*-------------------------------------------------------------*/
   /*-----------------Pick Countdown Duration---------------------*/
-  let timer = {
+  let timer: Timer = {
     minutes: 0,
     seconds: 0,
   };
-
-  type Timer = typeof timer;
 
   if (argv.t) {
     timer = {
@@ -179,6 +183,7 @@ const countdown = (argv: Argv) => {
           } else {
             rl.write("\u001B[?25h");
             console.clear();
+            alert("🚨TIME🚨");
             clearTimeout(last);
             process.exit();
           }
