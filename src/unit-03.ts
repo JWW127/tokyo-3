@@ -42,7 +42,7 @@ export const unit03 = () => {
       );
       swap = !swap;
     }
-  }, 700);
+  }, 900);
 
   const clearAll = setTimeout(() => {
     clearInterval(walk);

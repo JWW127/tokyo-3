@@ -88,7 +88,7 @@ const countdown = (argv: Argv) => {
     case "red":
       colors.main = "#EC2323";
       colors.accent = "#EA8532";
-      colors.speed = 120;
+      colors.speed = 400;
       break;
     case "green":
       colors.main = "#52D053";
@@ -179,6 +179,9 @@ const countdown = (argv: Argv) => {
             clearTimeout(last);
           } else if (argv.c === "dss") {
             dss();
+            clearTimeout(last);
+          } else if (argv.c === "red") {
+            unit03();
             clearTimeout(last);
           } else {
             rl.write("\u001B[?25h");
