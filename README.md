@@ -4,33 +4,39 @@
 <p>
 <b> High-Quality Terminal Based Pomodoro & Timer </b>
 </p>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 </div>
 
 This is a terminal based pomodoro timer. The Pomodor technique is a time management method developed in the 1980s by Cirllio Francesco. This timer has the added design of NGE themed colors and ending Animations.
+
+<div align="center">
+<img src="https://res.cloudinary.com/dpc3zrcvs/image/upload/v1665855297/tk3-timer_ksvps4.gif">
+</div>
 
 ## Install
 
 Tokyo-3 requires Node.js runtime. As there are numerous ways to install Node I'll just recommend a few, all are viable although I prefer NVM.
 
 Direct from Node
-<br>
+<br/>
 [NODE](https://nodejs.org/en/download/)
 
 Mac/Linux (Preferred)
+<br/>
 [NVM](https://github.com/nvm-sh/nvm)
-<br>
+<br/>
 [n](https://github.com/tj/n)
 
 Windows (Preferred)
+<br/>
 [NVM-windows](https://github.com/coreybutler/nvm-windows)
-<br>
+<br/>
 [nodist](https://github.com/nullivex/nodist)
 
 After NODE is installed you should be able to install TOKYO-3 with the following command in your terminal.
-<br>
+<br/>
 
 ```
 npm install -g tokyo-3
@@ -81,6 +87,18 @@ random
 
 Animations are linked to their corresponding color. The green and random color options have no animations.
 
+## Tips & Tricks
+
+Replay last command in the command line. <br/>
+`!!` or press up on your keyboard
+
+Have a specific time you want quick access to? Add it to your .bashrc or .zshrc <br/>
+In your .bashrc
+
+```
+alias timer='tokyo --min 15 --color pen'
+```
+
 ## Trouble Shooting
 
 The most common problem will likely be slow rendering. Mac and Windows operating systems come installed with ineffecient Terminals. If you are on a Mac I highly recommend [Alacritty](https://github.com/alacritty/alacritty) or [Kitty](https://sw.kovidgoyal.net/kitty/), both utilize gpu leveraging, you will see a signifcant performance boost even with intergrated graphics like that of Macbooks and Macbook Airs. If you are on a Windows system the same can be said. If you are on Linux Gnome terminal is already fairly powerful and comes installed on most distros.
@@ -88,3 +106,7 @@ The most common problem will likely be slow rendering. Mac and Windows operating
 Also of note is that both Kitty and Alacritty have great color themes and options to adjust render timings.
 
 If you would rather not get your hands dirty with config files you can also use color "red" as I specifically slowed the clock and animation speed to accomodate underpowered machines.
+
+## Liscense
+
+MIT

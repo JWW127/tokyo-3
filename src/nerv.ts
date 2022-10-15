@@ -2,21 +2,28 @@ import { yellow, bgBlack, bold, redBright } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
+import path from "path";
 
 export const nerv = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
   const nerv1 = async () => {
-    return await terminal.drawImage("./../images/nerv/nerv1.jpg", {
-      shrink: { width: 100, height: 100 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/nerv/nerv1.jpg"),
+      {
+        shrink: { width: 100, height: 100 },
+      }
+    );
   };
 
   const nerv2 = async () => {
-    return await terminal.drawImage("./../images/nerv/nerv2.jpg", {
-      shrink: { width: 100, height: 100 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/nerv/nerv2.jpg"),
+      {
+        shrink: { width: 100, height: 100 },
+      }
+    );
   };
 
   const theNerv = setInterval(async () => {

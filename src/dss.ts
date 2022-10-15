@@ -2,21 +2,28 @@ import { yellow, bgBlack, bold, red } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
+import path from "path";
 
 export const dss = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
   const dss1 = async () => {
-    return await terminal.drawImage("./../images/dss/dss-1.jpg", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/dss/dss-1.jpg"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const dss2 = async () => {
-    return await terminal.drawImage("./../images/dss/dss-2.jpg", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/dss/dss-2.jpg"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const theChoker = setInterval(async () => {

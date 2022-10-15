@@ -2,21 +2,28 @@ import { red, yellow, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
+import path from "path";
 
 export const unit03 = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
   const sunset1 = async () => {
-    return await terminal.drawImage("./../images/unit-3-walk/sunset-1.jpg", {
-      shrink: { width: 80, height: 60 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/unit-3-walk/sunset-1.jpg"),
+      {
+        shrink: { width: 80, height: 60 },
+      }
+    );
   };
 
   const sunset2 = async () => {
-    return await terminal.drawImage("./../images/unit-3-walk/sunset-2.jpg", {
-      shrink: { width: 80, height: 60 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/unit-3-walk/sunset-2.jpg"),
+      {
+        shrink: { width: 80, height: 60 },
+      }
+    );
   };
 
   const walk = setInterval(async () => {

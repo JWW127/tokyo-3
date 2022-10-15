@@ -2,21 +2,28 @@ import { green, yellow, bgRedBright, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
+import path from "path";
 
 export const mari = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
   const mari1 = async () => {
-    return await terminal.drawImage("./../images/mari-small.png", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/mari-small.png"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const mari2 = async () => {
-    return await terminal.drawImage("./../images/mari-small-invert.png", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/mari-small-invert.png"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const theBeast = setInterval(async () => {

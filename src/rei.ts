@@ -9,21 +9,28 @@ import {
 import alert from "alert";
 import terminalKitPackage from "terminal-kit";
 import { example, rl } from ".";
+import path from "path";
 
 export const rei = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
   const rei1 = async () => {
-    return await terminal.drawImage("./../images/rei/rei-1.jpg", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/rei/rei-1.jpg"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const rei2 = async () => {
-    return await terminal.drawImage("./../images/rei/rei-2.jpg", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/rei/rei-2.jpg"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const blink = setInterval(async () => {

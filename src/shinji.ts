@@ -2,15 +2,19 @@ import { red, yellow, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
+import path from "path";
 
 export const shinji = () => {
   const { terminal } = terminalKitPackage;
   let swap = 1;
 
   const run1 = async () => {
-    return await terminal.drawImage(`./../images/unit-1-run/r${swap}.jpg`, {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, `../images/unit-1-run/r${swap}.jpg`),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
   const atField = [
     "A.T. FIELD ▁                 A.T. FIELD ▁                 A.T. FIELD ▁                ",

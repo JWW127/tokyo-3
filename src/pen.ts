@@ -2,21 +2,28 @@ import { white, yellow, bgBlack, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
 import alert from "alert";
 import { example, rl } from ".";
+import path from "path";
 
 export const pen = () => {
   const { terminal } = terminalKitPackage;
   let swap = true;
 
   const pen1 = async () => {
-    return await terminal.drawImage("./../images/penpen/pen-1.jpg", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/penpen/pen-1.jpg"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const pen2 = async () => {
-    return await terminal.drawImage("./../images/penpen/pen-2.jpg", {
-      shrink: { width: 80, height: 80 },
-    });
+    return await terminal.drawImage(
+      path.join(__dirname, "../images/penpen/pen-2.jpg"),
+      {
+        shrink: { width: 80, height: 80 },
+      }
+    );
   };
 
   const thePen = setInterval(async () => {
