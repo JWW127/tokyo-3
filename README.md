@@ -107,6 +107,13 @@ Also of note is that both Kitty and Alacritty have great color themes and option
 
 If you would rather not get your hands dirty with config files you can also use color "red" as I specifically slowed the clock and animation speed to accomodate underpowered machines.
 
+## Special Thanks
+
+Dominik Wilkowski & the [cfonts](https://github.com/dominikwilkowski/cfonts) team. <br/>
+Aria - for your infinite wisdom. <br/>
+Aya - We Live in a Twilight World. <br/>
+Juneau - You're a dog.
+
 ## Liscense
 
 MIT
