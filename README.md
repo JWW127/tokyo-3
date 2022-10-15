@@ -2,14 +2,14 @@
 <img src="./images/seele.png" width="200" height="200">
 <h1>Tokyo-3</h1>
 <p>
-<b> High-Quality Terminal Based Pomodoro & Timer </b>
+<b> High-Quality Terminal Based Pomodoro Timer with Ending Animations. </b>
 </p>
 <br/>
 <br/>
 <br/>
 </div>
 
-This is a terminal based pomodoro timer. The Pomodor technique is a time management method developed in the 1980s by Cirllio Francesco. This timer has the added design of NGE themed colors and ending Animations.
+This is a terminal based pomodoro timer. The Pomodoro technique is a time management method developed in the 1980s by Cirllio Francesco. This timer has the added design of NGE themed colors and ending Animations.
 
 <div align="center">
 <img src="https://res.cloudinary.com/dpc3zrcvs/image/upload/v1665855297/tk3-timer_ksvps4.gif">
