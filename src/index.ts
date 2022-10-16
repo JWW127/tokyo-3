@@ -17,12 +17,11 @@ import {
   blackBright,
   magentaBright,
 } from "colorette";
-
 export type Argv = typeof argv;
+export const example =
+  "\n ........(っ◔◡◔)っ EXAMPLE|        $ tokyo --min 5 --color red             | \n";
 
 process.stdin.resume();
-const version = require("../package").version;
-
 export const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -34,10 +33,8 @@ process.on("SIGINT", () => {
   process.exit(0);
 });
 
-export const example =
-  "\n ........(っ◔◡◔)っ EXAMPLE|        $ tokyo --min 5 --color red             |";
-
-const argv = yargs(process.argv.slice(2))
+const version = require("../package").version;
+export const argv = yargs(process.argv.slice(2))
   .usage(bgBlackBright(bold(yellow(`\n\n  ${example}`))))
   .options({
     m: {
