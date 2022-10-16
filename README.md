@@ -60,6 +60,9 @@ tokyo --min 5 --color pen
 
 ## Options
 
+Show Help Menu <br/>
+`tokyo --help`
+
 ### Duration
 
 Duration is always in minutes, if you want a timer for 1 hour 5 minutes it will be entered as `--min 65`
