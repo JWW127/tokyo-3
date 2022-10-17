@@ -6,6 +6,9 @@
 
 /build
 
+dist/*
+dist/
+
 .DS_Store
 .env.local
 .env.development.local

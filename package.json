@@ -1,6 +1,6 @@
 {
   "name": "tokyo-3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Worlds Best Pomodoro. 3rd Impact Imminent. Switching to Auxillary Power.",
   "main": "dist/index.js",
   "scripts": {

@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./images/seele.png" width="200" height="200">
+<img src="https://res.cloudinary.com/dpc3zrcvs/image/upload/v1666031096/seele2_mtlor1.png" width="200" height="200">
 <h1>Tokyo-3</h1>
 <p>
 <b> High-Quality Terminal Based Pomodoro Timer with Ending Animations. </b>
