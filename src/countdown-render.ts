@@ -9,22 +9,27 @@ const countdown = (argv: Argv) => {
     minutes: 0,
     seconds: 0,
   };
-  if (argv.t) {
-    timer = {
-      minutes: 0,
-      seconds: 2,
-    };
-  } else if (argv.m) {
-    timer = {
-      minutes: argv.m - 1,
-      seconds: 59,
-    };
-  } else {
-    timer = {
-      minutes: 14,
-      seconds: 59,
-    };
-  }
+
+  const startingTime = () => {
+    if (argv.t) {
+      timer = {
+        minutes: 0,
+        seconds: 2,
+      };
+    } else if (argv.m) {
+      timer = {
+        minutes: argv.m - 1,
+        seconds: 59,
+      };
+    } else {
+      timer = {
+        minutes: 14,
+        seconds: 59,
+      };
+    }
+  };
+
+  startingTime();
 
   const RemainingTime = (timer: Timer, argv: Argv) => {
     timer.seconds = timer.seconds - 1;
