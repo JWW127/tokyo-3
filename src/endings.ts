@@ -8,6 +8,7 @@ import { pen } from "./pen";
 import { dss } from "./dss";
 import { gendo } from "./gendo";
 import { nerv } from "./nerv";
+import { seele } from "./seele";
 import alert from "alert";
 
 export const endingAnimationCall = (argv: Argv) => {
@@ -29,6 +30,8 @@ export const endingAnimationCall = (argv: Argv) => {
     return dss();
   } else if (argv.c === "red") {
     return unit03();
+  } else if (argv.c === "seele") {
+    return seele();
   } else {
     rl.write("\u001B[?25h");
     console.clear();
