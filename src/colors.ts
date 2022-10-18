@@ -55,6 +55,11 @@ export const colorChoice = (argv: Argv) => {
       colors.accent = "#E90000";
       colors.speed = 120;
       break;
+    case "kaworu":
+      colors.main = "#967bb6";
+      colors.accent = "#00EFE6";
+      colors.speed = 400;
+      break;
     case "angel":
       colors.main = "#3e0694";
       colors.accent = "candy";

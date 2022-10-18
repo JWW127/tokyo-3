@@ -10,6 +10,7 @@ import { gendo } from "./gendo";
 import { nerv } from "./nerv";
 import { seele } from "./seele";
 import alert from "alert";
+import { kaworu } from "./kaworu";
 
 export const endingAnimationCall = (argv: Argv) => {
   if (argv.c === "beast") {
@@ -32,6 +33,8 @@ export const endingAnimationCall = (argv: Argv) => {
     return unit03();
   } else if (argv.c === "seele") {
     return seele();
+  } else if (argv.c === "kaworu") {
+    return kaworu();
   } else {
     rl.write("\u001B[?25h");
     console.clear();

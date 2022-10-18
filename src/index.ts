@@ -16,6 +16,7 @@ import {
   redBright,
   blackBright,
   magentaBright,
+  yellowBright,
 } from "colorette";
 export type Argv = typeof argv;
 export const example =
@@ -52,7 +53,9 @@ export const argv = yargs(process.argv.slice(2))
         "rei"
       )}, ${magenta("shinji")}, ${blue("gendo")}, ${cyan("dss")}, ${white(
         "pen"
-      )}, ${magentaBright("nerv")}, random`,
+      )}, ${magentaBright("nerv")}, ${blueBright("kaworu")}, ${yellowBright(
+        "seele"
+      )}, random`,
       usage: "tokyo -c red",
     },
     t: {
