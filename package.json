@@ -12,6 +12,12 @@
   "bin": {
     "tokyo": "./dist/index.js"
   },
+  "files": [
+    "/dist",
+    "/images",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "Pomodoro",
     "Cli",
