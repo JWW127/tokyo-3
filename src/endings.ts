@@ -11,6 +11,7 @@ import { nerv } from "./nerv";
 import { seele } from "./seele";
 import alert from "alert";
 import { kaworu } from "./kaworu";
+import { asuka } from "./asuka";
 
 export const endingAnimationCall = (argv: Argv) => {
   if (argv.c === "beast") {
@@ -29,6 +30,8 @@ export const endingAnimationCall = (argv: Argv) => {
     return gendo();
   } else if (argv.c === "dss") {
     return dss();
+  } else if (argv.c === "asuka") {
+    return asuka();
   } else if (argv.c === "red") {
     return unit03();
   } else if (argv.c === "seele") {
