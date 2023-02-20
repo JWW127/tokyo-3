@@ -22,7 +22,8 @@ export type Argv = typeof argv;
 export const example =
   "\n ........(っ◔◡◔)っ EXAMPLE|        $ tokyo --min 5 --color red             | \n";
 
-process.stdin.resume();
+//process.stdin.resume();
+
 export const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,

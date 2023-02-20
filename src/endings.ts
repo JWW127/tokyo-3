@@ -14,34 +14,39 @@ import { kaworu } from "./kaworu";
 import { asuka } from "./asuka";
 
 export const endingAnimationCall = (argv: Argv) => {
-  if (argv.c === "beast") {
-    return mari();
-  } else if (argv.c === "angel") {
-    return unit03();
-  } else if (argv.c === "shinji") {
-    return shinji();
-  } else if (argv.c === "rei") {
-    return rei();
-  } else if (argv.c === "pen") {
-    return pen();
-  } else if (argv.c === "nerv") {
-    return nerv();
-  } else if (argv.c === "gendo") {
-    return gendo();
-  } else if (argv.c === "dss") {
-    return dss();
-  } else if (argv.c === "asuka") {
-    return asuka();
-  } else if (argv.c === "red") {
-    return unit03();
-  } else if (argv.c === "seele") {
-    return seele();
-  } else if (argv.c === "kaworu") {
-    return kaworu();
-  } else {
-    rl.write("\u001B[?25h");
-    console.clear();
-    alert("🚨TIME🚨");
-    process.exit();
-  }
+
+    function empty() {
+        rl.write("\u001B[?25h");
+        console.clear();
+        alert("🚨TIME🚨");
+        process.exit();
+    }
+
+    let lookup = {
+        beast: () => mari(),
+        angel: () => unit03(),
+        shinji: () => shinji(),
+        rei: () => rei(),
+        pen: () => pen(),
+        nerv: () => nerv(),
+        gendo: () => gendo(),
+        dss: () => dss(),
+        asuka: () => asuka(),
+        red: () => unit03(),
+        seele: () => seele(),
+        kaworu: () => kaworu(),
+        empty: () => empty()
+    } as const
+
+    type obj = typeof lookup
+    type keys = keyof obj
+    type anime = obj[keyof obj]
+
+    // have to jpjs or we get unexpected token error
+    let k: keys = argv.c ? argv.c : JSON.parse(JSON.stringify("empty"));
+
+    let animation: anime = lookup[k]
+    return animation()
+
+
 };

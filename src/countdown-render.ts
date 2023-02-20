@@ -14,7 +14,7 @@ const countdown = (argv: Argv) => {
     if (argv.t) {
       timer = {
         minutes: 0,
-        seconds: 2,
+        seconds: 1,
       };
     } else if (argv.m) {
       timer = {
