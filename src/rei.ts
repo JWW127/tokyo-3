@@ -6,7 +6,7 @@ import {
   bgBlack,
   cyan,
 } from "colorette";
-import alert from "alert";
+import { notify } from "node-notifier";
 import terminalKitPackage from "terminal-kit";
 import { example, rl } from ".";
 import path from "path";
@@ -71,6 +71,6 @@ export const rei = () => {
     process.exit();
   }, 10000);
   blink;
-  alert("🚨TIME🚨");
+  notify("🚨TIME🚨");
   clearAll;
 };

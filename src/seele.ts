@@ -1,6 +1,6 @@
 import { red, yellow, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
-import alert from "alert";
+import { notify } from "node-notifier";
 import { example, rl } from ".";
 import path from "path";
 
@@ -42,6 +42,6 @@ export const seele = () => {
     process.exit();
   }, 10000);
   bakaRun;
-  alert("🚨TIME🚨");
+  notify("🚨TIME🚨");
   clearBaka;
 };
