@@ -1,6 +1,6 @@
 import { white, yellow, bgBlack, bold } from "colorette";
 import terminalKitPackage from "terminal-kit";
-import alert from "alert";
+import { notify } from "node-notifier";
 import { example, rl } from ".";
 import path from "path";
 
@@ -64,6 +64,6 @@ export const pen = () => {
     process.exit();
   }, 10000);
   thePen;
-  alert("🚨TIME🚨");
+  notify("🚨TIME🚨");
   clearAll;
 };

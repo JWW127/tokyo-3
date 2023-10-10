@@ -1,6 +1,6 @@
 import { yellow, bgBlack, bold, redBright } from "colorette";
 import terminalKitPackage from "terminal-kit";
-import alert from "alert";
+import { notify } from "node-notifier";
 import { example, rl } from ".";
 import path from "path";
 
@@ -64,6 +64,6 @@ export const nerv = () => {
     process.exit();
   }, 10000);
   theNerv;
-  alert("🚨TIME🚨");
+  notify("🚨TIME🚨");
   clearAll;
 };

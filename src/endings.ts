@@ -9,7 +9,7 @@ import { dss } from "./dss";
 import { gendo } from "./gendo";
 import { nerv } from "./nerv";
 import { seele } from "./seele";
-import alert from "alert";
+import { notify } from "node-notifier";
 import { kaworu } from "./kaworu";
 import { asuka } from "./asuka";
 
@@ -18,7 +18,7 @@ export const endingAnimationCall = (argv: Argv) => {
     function empty() {
         rl.write("\u001B[?25h");
         console.clear();
-        alert("🚨TIME🚨");
+        notify("🚨TIME🚨");
         process.exit();
     }
 
